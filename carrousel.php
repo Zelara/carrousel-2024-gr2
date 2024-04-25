@@ -28,6 +28,11 @@ function eddym_enqueue()
 }
 
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
+// IMPORTANT 
+// Dans header.php
+// wp_header() juste avant la balise fermeture de </head> 
+// Dans footer.php
+// wp_footer() juste avant la balise fermeture de </body>
 
 function genere_html()
 {
