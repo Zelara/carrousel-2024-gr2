@@ -7,7 +7,7 @@
   let galerie = document.querySelector(".galerie");
   // let galerie__img = galerie.querySelector("img"); // première image seulement
   let carrousel__figure = document.querySelector(".carrousel__figure");
-  let galerie__img = document.querySelectorAll("img"); // la collection des images de la galerie
+  let galerie__img = galerie.querySelectorAll("img"); // la collection des images de la galerie
 
   let index = 0;
   for (const elm of galerie__img) {
@@ -38,15 +38,15 @@
    */
   function creer_radio_carrousel(index) {
     // Créer input
-    let input = document.createElement("input");
+    let carrousel__radio = document.createElement("input");
     // Modifier type = radio
-    input.type = "radio";
+    carrousel__radio.type = "radio";
     // Modifier l'attribut name
-    input.name = "radio_carrousel";
+    carrousel__radio.name = "carrousel_radio";
     // Modifier l'index
-    input.dataset.index = index;
+    carrousel__radio.dataset.index = index;
     // Écouteur de l'événement change
-    input.addEventListener("change", function () {
+    carrousel__radio.addEventListener("change", function () {
       // Réinitialiser l'opacité de toutes les images
       let images = document.querySelectorAll(".carrousel__img");
       // Initialiser le style.opacity=0 pour l'ensemble des images
@@ -61,8 +61,8 @@
     });
 
     // Ajouter le radio au formulaire
-    let form = document.querySelector(".carrousel__form");
-    form.appendChild(input);
+    let carrousel__form = document.querySelector(".carrousel__form");
+    carrousel__form.appendChild(carrousel__radio);
   }
 
   bouton.addEventListener("mousedown", function () {
