@@ -51,3 +51,41 @@
   left: 0;
   object-fit: cover;
 }
+
+// Variables pour les couleurs
+$couleur-bouton-carrousel: #3498db;
+
+// Style de base du bouton
+.bouton__ouvrir {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: $couleur-bouton-carrousel;
+  color: var(--couleur-blanc);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($couleur-bouton-carrousel, 10%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Exemple d'un bouton avec une icône
+.bouton__ouvrir-icone {
+  @extend .bouton__ouvrir;
+  padding: 10px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+}

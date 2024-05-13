@@ -50,4 +50,33 @@
   top: 0;
   left: 0;
   object-fit: cover;
+}
+
+.bouton__ouvrir, .bouton__ouvrir-icone {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: var(--couleur-blanc);
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.bouton__ouvrir:hover, .bouton__ouvrir-icone:hover {
+  background-color: #217dbb;
+}
+.bouton__ouvrir:focus, .bouton__ouvrir-icone:focus {
+  outline: none;
+}
+
+.bouton__ouvrir-icone {
+  padding: 10px;
+}
+.bouton__ouvrir-icone svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }/*# sourceMappingURL=style.css.map */
