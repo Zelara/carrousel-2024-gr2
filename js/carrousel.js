@@ -11,6 +11,9 @@
     for (const elm of galerie__img) {
       creer_image_carrousel(index, elm);
       creer_radio_carrousel(index);
+      elm.addEventListener("click", function () {
+        ouvrir_carrousel(index);
+      });
       index = index + 1;
     }
 
@@ -41,8 +44,19 @@
       carrousel__form.appendChild(carrousel__radio);
     }
 
-    bouton.addEventListener("mousedown", function () {
+    function ouvrir_carrousel(index) {
       carrousel.classList.add("carrousel--ouvrir");
+      document.querySelector(
+        `input[name='carrousel_radio'][data-index='${index}']`
+      ).checked = true;
+      let event = new Event("change");
+      document
+        .querySelector(`input[name='carrousel_radio'][data-index='${index}']`)
+        .dispatchEvent(event);
+    }
+
+    bouton.addEventListener("mousedown", function () {
+      ouvrir_carrousel(0);
     });
 
     carrousel__x.addEventListener("mousedown", function () {
