@@ -74,15 +74,3 @@
     outline: none;
   }
 }
-
-// Exemple d'un bouton avec une icône
-.bouton__ouvrir-icone {
-  @extend .bouton__ouvrir;
-  padding: 10px;
-
-  svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-}

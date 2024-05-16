@@ -52,7 +52,7 @@
   object-fit: cover;
 }
 
-.bouton__ouvrir, .bouton__ouvrir-icone {
+.bouton__ouvrir {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
@@ -65,18 +65,9 @@
   border: none;
   transition: background-color 0.3s ease;
 }
-.bouton__ouvrir:hover, .bouton__ouvrir-icone:hover {
+.bouton__ouvrir:hover {
   background-color: var(--couleur-bleu-pale);
 }
-.bouton__ouvrir:focus, .bouton__ouvrir-icone:focus {
+.bouton__ouvrir:focus {
   outline: none;
-}
-
-.bouton__ouvrir-icone {
-  padding: 10px;
-}
-.bouton__ouvrir-icone svg {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
 }/*# sourceMappingURL=style.css.map */
