@@ -2,7 +2,6 @@
   if (document.querySelector(".galerie")) {
     let galerie = document.querySelector(".galerie");
     let carrousel = document.querySelector(".carrousel");
-    let bouton = document.querySelector(".bouton__ouvrir");
     let carrousel__x = document.querySelector(".carrousel__x");
     let carrousel__figure = document.querySelector(".carrousel__figure");
     let galerie__img = galerie.querySelectorAll("img");
@@ -55,8 +54,15 @@
         .dispatchEvent(event);
     }
 
-    bouton.addEventListener("mousedown", function () {
-      ouvrir_carrousel(0);
+    // Fermer le carrousel en cliquant en dehors des composants internes spécifiques
+    document.addEventListener("mousedown", function (event) {
+      // Vérifie si le carrousel est ouvert
+      if (carrousel.classList.contains("carrousel--ouvrir")) {
+        // Vérifie si le clic n'est pas sur un des éléments internes du carrousel ou sur le carrousel lui-même
+        if (!carrousel.contains(event.target)) {
+          carrousel.classList.remove("carrousel--ouvrir");
+        }
+      }
     });
 
     carrousel__x.addEventListener("mousedown", function () {
