@@ -70,4 +70,32 @@
 }
 .bouton__ouvrir:focus {
   outline: none;
+}
+
+.carrousel__fleche {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carrousel__fleche--gauche {
+  left: 10px;
+}
+
+.carrousel__fleche--droite {
+  right: 10px;
+}
+
+.carrousel__img {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.carrousel__img[style*="opacity: 1"] {
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
