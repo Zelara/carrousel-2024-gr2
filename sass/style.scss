@@ -52,6 +52,7 @@
   object-fit: cover;
 }
 
+// Style de base du bouton
 .bouton__ouvrir {
   display: inline-block;
   padding: 10px 20px;
@@ -64,12 +65,14 @@
   cursor: pointer;
   border: none;
   transition: background-color 0.3s ease;
-}
-.bouton__ouvrir:hover {
-  background-color: var(--couleur-bleu-pale);
-}
-.bouton__ouvrir:focus {
-  outline: none;
+
+  &:hover {
+    background-color: var(--couleur-bleu-pale);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .carrousel__fleche {
@@ -98,4 +101,4 @@
 
 .carrousel__img[style*="opacity: 1"] {
   opacity: 1;
-}/*# sourceMappingURL=style.css.map */
+}

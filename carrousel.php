@@ -28,17 +28,21 @@ function eddym_enqueue()
 }
 
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
+// IMPORTANT 
+// Dans header.php
+// wp_header() juste avant la balise fermeture de </head> 
+// Dans footer.php
+// wp_footer() juste avant la balise fermeture de </body>
 
 function genere_html()
 {
-    /////////////////////////////////////// HTML
-    // Le conteneur d'une boîte
-
-    $contenu = '<button class="bouton__ouvrir">Ouvrir</button>
+    $contenu = '
     <div class="carrousel">
-    <button class="carrousel__x">X</button>
-    <figure class="carrousel__figure"></figure>
-    <form class="carrousel__form"></form>
+      <button class="carrousel__x">X</button>
+      <figure class="carrousel__figure"></figure>
+      <form class="carrousel__form"></form>
+      <button class="carrousel__fleche carrousel__fleche--gauche">&#9664;</button>
+      <button class="carrousel__fleche carrousel__fleche--droite">&#9654;</button>
     </div>';
     return $contenu;
 }
