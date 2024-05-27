@@ -6,35 +6,31 @@
     let carrousel__figure = document.querySelector(".carrousel__figure");
     let galerie__img = galerie.querySelectorAll("img");
 
-    let index = 0;
     for (const elm of galerie__img) {
-      creer_image_carrousel(index, elm);
-      creer_radio_carrousel(index);
+      creer_image_carrousel(elm);
+      creer_radio_carrousel(elm);
       elm.addEventListener("click", function () {
-        ouvrir_carrousel(index);
+        ouvrir_carrousel(elm);
       });
-      index = index + 1;
     }
 
-    function creer_image_carrousel(index, elm) {
+    function creer_image_carrousel(elm) {
       let carrousel__img = document.createElement("img");
       carrousel__img.classList.add("carrousel__img");
-      carrousel__img.dataset.index = index;
       carrousel__img.src = elm.src;
       carrousel__figure.appendChild(carrousel__img);
     }
 
-    function creer_radio_carrousel(index) {
+    function creer_radio_carrousel(elm) {
       let carrousel__radio = document.createElement("input");
       carrousel__radio.type = "radio";
       carrousel__radio.name = "carrousel_radio";
-      carrousel__radio.dataset.index = index;
 
       carrousel__radio.addEventListener("change", function () {
         let images = document.querySelectorAll(".carrousel__img");
         images.forEach((img) => (img.style.opacity = 0));
         let selectedImg = document.querySelector(
-          `.carrousel__img[data-index="${index}"]`
+          `.carrousel__img[src="${elm.src}"]`
         );
         if (selectedImg) selectedImg.style.opacity = 1;
       });
@@ -43,15 +39,14 @@
       carrousel__form.appendChild(carrousel__radio);
     }
 
-    function ouvrir_carrousel(index) {
+    function ouvrir_carrousel(elm) {
       carrousel.classList.add("carrousel--ouvrir");
-      document.querySelector(
-        `input[name='carrousel_radio'][data-index='${index}']`
-      ).checked = true;
-      let event = new Event("change");
-      document
-        .querySelector(`input[name='carrousel_radio'][data-index='${index}']`)
-        .dispatchEvent(event);
+      let selectedImg = document.querySelector(
+        `.carrousel__img[src="${elm.src}"]`
+      );
+      if (selectedImg) {
+        selectedImg.style.opacity = 1;
+      }
     }
 
     // Fermer le carrousel en cliquant en dehors des composants internes spécifiques
